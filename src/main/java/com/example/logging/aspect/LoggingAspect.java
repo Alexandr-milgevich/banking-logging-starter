@@ -18,8 +18,8 @@ import java.util.Arrays;
 public class LoggingAspect {
     private final LoggingProperties properties;
 
-    @Around("@within(org.springframework.stereotype.Service) || " +
-            "@within(org.springframework.web.bind.annotation.RestController)")
+    @Around("within(@org.springframework.stereotype.Service *) || " +
+            "within(@org.springframework.web.bind.annotation.RestController *)")
     public Object logMethodCall(ProceedingJoinPoint joinPoint) throws Throwable {
         if (!properties.isEnabled()) {
             return joinPoint.proceed();

@@ -1,6 +1,0 @@
-banking:
-  logging:
-    enabled: true
-    level: DEBUG
-    log-arguments: true
-    log-execution-time: true
