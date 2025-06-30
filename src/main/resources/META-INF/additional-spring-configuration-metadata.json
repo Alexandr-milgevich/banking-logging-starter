@@ -1,0 +1,66 @@
+{
+  "groups": [
+    {
+      "name": "banking.logging",
+      "type": "com.example.logging.properties.LoggingProperties",
+      "sourceType": "com.example.logging.properties.LoggingProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "banking.logging.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Whether logging aspect is enabled.",
+      "sourceType": "com.example.logging.properties.LoggingProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "banking.logging.level",
+      "type": "com.example.logging.constants.LevelLogging",
+      "description": "Logging level for aspect messages. Available values: TRACE, DEBUG, INFO, WARN, ERROR",
+      "sourceType": "com.example.logging.properties.LoggingProperties",
+      "defaultValue": "INFO"
+    },
+    {
+      "name": "banking.logging.log-arguments",
+      "type": "java.lang.Boolean",
+      "description": "Whether to log method arguments.",
+      "sourceType": "com.example.logging.properties.LoggingProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "banking.logging.log-execution-time",
+      "type": "java.lang.Boolean",
+      "description": "Whether to log method execution time.",
+      "sourceType": "com.example.logging.properties.LoggingProperties",
+      "defaultValue": true
+    }
+  ],
+  "hints": [
+    {
+      "name": "banking.logging.level",
+      "values": [
+        {
+          "value": "TRACE",
+          "description": "Log at TRACE level - most verbose."
+        },
+        {
+          "value": "DEBUG",
+          "description": "Log at DEBUG level - detailed debug information."
+        },
+        {
+          "value": "INFO",
+          "description": "Log at INFO level - general operational messages."
+        },
+        {
+          "value": "WARN",
+          "description": "Log at WARN level - potentially harmful situations."
+        },
+        {
+          "value": "ERROR",
+          "description": "Log at ERROR level - error events that might still allow the application to continue running."
+        }
+      ]
+    }
+  ]
+}
