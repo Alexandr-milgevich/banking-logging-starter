@@ -7,11 +7,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
 @Slf4j
 @Aspect
+@Component
 @RequiredArgsConstructor
 public class LoggingAspect {
     private final LoggingProperties properties;
