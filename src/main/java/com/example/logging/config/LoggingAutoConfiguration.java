@@ -13,15 +13,14 @@ import org.springframework.context.annotation.Bean;
 
 @Slf4j
 @AutoConfiguration
+@ConditionalOnClass(Aspect.class)
 @EnableConfigurationProperties(LoggingProperties.class)
 @ConditionalOnProperty(prefix = "banking.logging", name = "enabled", havingValue = "true", matchIfMissing = true)
-@ConditionalOnClass(Aspect.class)
 public class LoggingAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
     public LoggingAspect loggingAspect(LoggingProperties properties) {
-        log.info("Creating LoggingAspect with properties: {}", properties);
         return new LoggingAspect(properties);
     }
 }
